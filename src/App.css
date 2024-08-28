@@ -38,7 +38,7 @@
 }
 
 
-/* src/styles.css */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -51,26 +51,28 @@ body {
   flex-direction: column;
   align-items: flex-start;
   background-color: #fff;
-  padding: 20px;
-  margin: 20px;
+  padding: 70px;
+  margin: 70px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 5px rgb(64, 75, 79);
 }
+
 
 .item-input,
 .quantity-select,
 .category-select,
 .notes-input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 25px;
+  margin: 20px 0;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 9px;
+  font-size: 70;
 }
 
 .add-item-button {
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #1606f8;
   color: white;
   border: none;
   border-radius: 4px;
@@ -79,15 +81,15 @@ body {
 }
 
 .add-item-button:hover {
-  background-color: #218838;
+  background-color: #0e0f0e;
 }
 
 .shopping-list {
-  margin: 20px;
+  margin: 90px;
 }
 
 .shopping-list-title {
-  font-size: 24px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
@@ -97,28 +99,28 @@ body {
 }
 
 .shopping-list-item {
-  display: flex;
-  justify-content: space-between;
+ 
+  justify-content: space-around;
   align-items: center;
   background-color: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 5px rgb(64, 75, 79);
 }
 
 .shopping-list-item.completed {
-  background-color: #d4edda;
+  background-color: #4dd7e6;
   text-decoration: line-through;
 }
 
 .item-details {
-  flex-grow: 1;
+  flex-grow: 5;
 }
 
 .item-actions {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .toggle-item-button {
@@ -166,4 +168,286 @@ body {
 .item-notes {
   margin-top: 5px;
   color: #555;
+  font-size: 70;
+}
+
+.sort-select {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 10px 10px 5px rgb(64, 75, 79);
+  font-size: 20px;
+}
+
+.search-input {
+  width: 2350px;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 10px 10px 5px rgb(64, 75, 79);
+  font-size: 20px;
+}
+
+
+.list-selector {
+  margin: 20px 0;
+}
+
+.list-select,
+.new-list-input {
+  width: 2400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.create-list-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-list-button:hover {
+  background-color: #218838;
+}
+
+.share-list {
+  margin: 20px 0;
+}
+
+.share-link-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.copy-link-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-link-button:hover {
+  background-color: #0056b3;
+}
+
+
+.shopping-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-list-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-input,
+.sort-select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.shopping-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+.shopping-list-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.shopping-list-item td {
+    padding: 10px;
+    text-align: left;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-notes {
+    margin: 0;
+    color: #777;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-item-button,
+.delete-item-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-item-button.complete {
+    background-color: #28a745;
+    color: white;
+}
+
+.toggle-item-button.undo {
+    background-color: #ffc107;
+    color: white;
+}
+
+.delete-item-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.completed .item-name {
+    text-decoration: line-through;
+    color: #888;
+}
+
+
+
+
+
+
+
+
+.shopping-list {
+  max-width: 2350px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px rgb(64, 75, 79);
+}
+
+.shopping-list-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-input,
+.sort-select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.shopping-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table-header {
+  background-color: #f4f4f4;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.shopping-list-item {
+  border-bottom: 1px solid #ddd; 
+}
+
+.shopping-list-item td {
+  padding: 10px;
+  text-align: left;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-notes {
+  margin: 0;
+  color: #777;
+}
+
+.item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-item-button,
+.delete-item-button :active {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggle-item-button.complete :active {
+  background-color: #28a745;
+  color: white;
+}
+
+.toggle-item-button.undo :active {
+  background-color: #ffc107;
+  color: white;
+}
+
+.delete-item-button :active {
+  background-color: #dc3545;
+  color: white;
+}
+
+.completed .item-name {
+  text-decoration: line-through;
+  color: #888;
+}
+
+
+.app {
+  text-align: center;
+}
+
+.navigation {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.nav-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
