@@ -1,4 +1,4 @@
-// src/redux/store.js
+
 import { createStore } from 'redux';
 import shoppingListReducer from './reducers';
 
