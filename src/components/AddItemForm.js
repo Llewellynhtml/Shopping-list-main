@@ -38,7 +38,7 @@ const AddItemForm = () => {
                 type="text"
                 value={itemName}
                 onChange={(e) => setItemName(e.target.value)}
-                placeholder="Search/Add Item"
+                placeholder="Add Item"
                 required
                 className="item-input"
             />
