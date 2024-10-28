@@ -29,13 +29,9 @@ const Register = () => {
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Registration successful! You can now log in.");
+    alert("Registration successful! You can now add items.");
 
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-
-    navigate("/login");
+    navigate("/add-item");
   };
 
   return (
@@ -68,7 +64,7 @@ const Register = () => {
         Register
       </button>
       <p>
-        Already have an account? <Link to="/">Login</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </form>
   );
