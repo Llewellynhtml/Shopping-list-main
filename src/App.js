@@ -12,7 +12,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import "./App.css";
-import Logo from "./components/E-commerce.png";
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
@@ -37,14 +36,21 @@ const App = () => {
   return (
     <Router>
       <div className="app">
-        <img src={Logo} alt="E-commerce" className="E-com" />
         <nav className="navigation">
           {user ? (
             <>
-              <Link to="/add-item" className="nav-link">Add Item</Link>
-              <Link to="/shopping-list" className="nav-link">Shopping List</Link>
-              <Link to="/privacy-policy" className="nav-link">Privacy Policy</Link>
-              <button onClick={handleLogout} className="nav-link">Logout</button>
+              <Link to="/add-item" className="nav-link add-item-link">
+                Add Item
+              </Link>
+              <Link to="/shopping-list" className="nav-link shopping-list-link">
+                Shopping List
+              </Link>
+              <Link to="/privacy-policy" className="nav-link privacy-policy-link">
+                Privacy Policy
+              </Link>
+              <button onClick={handleLogout} className="nav-link logout-link">
+                Logout
+              </button>
             </>
           ) : null}
         </nav>

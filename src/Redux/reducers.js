@@ -1,49 +1,55 @@
-import { ADD_ITEM, DELETE_ITEM, TOGGLE_ITEM, UPDATE_ITEM } from './actions';
 
-const initialState = {
-    items: JSON.parse(localStorage.getItem('items')) || [],
+import { ADD_ITEM, DELETE_ITEM, TOGGLE_ITEM, UPDATE_ITEM, LOAD_STATE_FROM_LOCALSTORAGE } from './actions';
+
+const saveToLocalStorage = (state) => {
+  localStorage.setItem('shoppingListState', JSON.stringify(state));
 };
 
-const shoppingListReducer = (state = initialState, action) => {
-    let updatedItems;
-    switch (action.type) {
-        case ADD_ITEM:
-            updatedItems = [...state.items, action.payload];
-            localStorage.setItem('items', JSON.stringify(updatedItems));
-            return {
-                ...state,
-                items: updatedItems,
-            };
-        case DELETE_ITEM:
-            updatedItems = state.items.filter(item => item.id !== action.payload);
-            localStorage.setItem('items', JSON.stringify(updatedItems));
-            return {
-                ...state,
-                items: updatedItems,
-            };
-        case TOGGLE_ITEM:
-            updatedItems = state.items.map(item =>
-                item.id === action.payload
-                    ? { ...item, completed: !item.completed }
-                    : item
-            );
-            localStorage.setItem('items', JSON.stringify(updatedItems));
-            return {
-                ...state,
-                items: updatedItems,
-            };
-        case UPDATE_ITEM:
-            updatedItems = state.items.map(item =>
-                item.id === action.payload.id ? action.payload : item
-            );
-            localStorage.setItem('items', JSON.stringify(updatedItems));
-            return {
-                ...state,
-                items: updatedItems,
-            };
-        default:
-            return state;
-    }
+const loadFromLocalStorage = () => {
+  const savedState = localStorage.getItem('shoppingListState');
+  return savedState ? JSON.parse(savedState) : { items: [] };
 };
 
-export default shoppingListReducer;
+const initialState = loadFromLocalStorage();
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_ITEM:
+      const newStateAddItem = { ...state, items: [...state.items, action.payload] };
+      saveToLocalStorage(newStateAddItem);
+      return newStateAddItem;
+
+    case DELETE_ITEM:
+      const newStateDeleteItem = { ...state, items: state.items.filter(item => item.id !== action.payload) };
+      saveToLocalStorage(newStateDeleteItem);
+      return newStateDeleteItem;
+
+    case TOGGLE_ITEM:
+      const newStateToggleItem = {
+        ...state,
+        items: state.items.map(item => 
+          item.id === action.payload ? { ...item, completed: !item.completed } : item
+        ),
+      };
+      saveToLocalStorage(newStateToggleItem);
+      return newStateToggleItem;
+
+    case UPDATE_ITEM:
+      const newStateUpdateItem = {
+        ...state,
+        items: state.items.map(item => 
+          item.id === action.payload.id ? action.payload : item
+        ),
+      };
+      saveToLocalStorage(newStateUpdateItem);
+      return newStateUpdateItem;
+
+    case LOAD_STATE_FROM_LOCALSTORAGE:
+      return { ...state, ...action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export default reducer;

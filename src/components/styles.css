@@ -1,0 +1,72 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(173, 216, 230, 0.6);
+  max-width: 400px;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+.submit-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #004080;
+}
+
+p {
+  text-align: center;
+}
+
+.login-link,
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.login-link a,
+.register-link a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.login-link a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
